@@ -12,12 +12,17 @@ namespace SigmaCP.Model
         private Script script;
         private Note note;
 
+        public Interpreter()
+        {
+            
+        }
         public Interpreter(JsonInterpreter jsonInterpreter)
         {
+            this.Action = new MoonSharp.Interpreter.Script();
             script = jsonInterpreter.GetScript();
             note = jsonInterpreter.GetNote();
-            
-            Action.Globals["note"] = note.GetData();
+
+            Action.Globals["note"] = note.LoadedData;
             Action.Globals["Vibrate"]=(Func<string,int>)Controllers.SocketServer.sendData;
             Action = new MoonSharp.Interpreter.Script();
         }

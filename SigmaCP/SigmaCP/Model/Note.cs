@@ -7,7 +7,7 @@ namespace SigmaCP.Model
 {
     public class Note
     {
-        public string LoadedData { get; set; }
+        public string LoadedData;
 
         public Note()
         {

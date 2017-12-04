@@ -23,18 +23,13 @@ namespace SigmaCP.Controllers
         [HttpPost]
         public string Post([FromBody] JsonInterpreter JsonData)
         {
-            try
-            {
+            
                 Interpreter MyInterpreter = new Interpreter(JsonData);
                 MyInterpreter.Run();
                 return "Is ok";
 
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
+           
+           
             
         }
 
