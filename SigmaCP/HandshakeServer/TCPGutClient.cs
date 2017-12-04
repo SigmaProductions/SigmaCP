@@ -30,6 +30,7 @@ namespace HandshakeServer
             }
 
             var tcpStream = client.GetStream();
+            Console.WriteLine("writing..");
             tcpStream.Write(System.Text.Encoding.ASCII.GetBytes(data), 0,data.Length);
             tcpStream.Close();
         }
