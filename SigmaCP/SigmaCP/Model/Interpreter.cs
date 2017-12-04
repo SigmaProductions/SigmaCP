@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MoonSharp;
+
 namespace SigmaCP.Model
 {
     public class Interpreter
@@ -15,9 +16,9 @@ namespace SigmaCP.Model
         {
             script = jsonInterpreter.GetScript();
             note = jsonInterpreter.GetNote();
-
+            
             Action.Globals["note"] = note.GetData();
-            //ActionGlobals["Vibrate"]=(Func<List<int>>);
+            Action.Globals["Vibrate"]=(Func<string,int>)Controllers.SocketServer.sendData;
             Action = new MoonSharp.Interpreter.Script();
         }
 

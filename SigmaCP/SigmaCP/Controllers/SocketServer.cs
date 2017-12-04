@@ -24,10 +24,11 @@ namespace SigmaCP.Controllers
             udpServer = new System.Net.Sockets.UdpClient();
 
         }
-        public static void sendData(string data)
+        public static int sendData(string data)
         {
             Startup();
             udpServer.Send(System.Text.Encoding.ASCII.GetBytes(data),data.Length, serverEndPoint);
+            return 1;
         }
     }
 }
