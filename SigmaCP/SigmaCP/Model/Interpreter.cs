@@ -19,7 +19,7 @@ namespace SigmaCP.Model
             Action = new MoonSharp.Interpreter.Script();
         }
 
-        void Run()
+        public void Run()
         {
             Action.DoString(script.GetScriptBody());
         }

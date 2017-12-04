@@ -21,9 +21,21 @@ namespace SigmaCP.Controllers
 
         // POST api/values
         [HttpPost]
-        public string Post([FromBody] Note note)
+        public string Post([FromBody] JsonInterpreter JsonData)
         {
-            return null;
+            try
+            {
+                Interpreter MyInterpreter = new Interpreter(JsonData);
+                MyInterpreter.Run();
+                return "Is ok";
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
         }
 
         // PUT api/values/5
