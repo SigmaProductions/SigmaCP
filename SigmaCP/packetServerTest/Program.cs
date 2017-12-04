@@ -6,10 +6,12 @@ namespace packetServerTest
     {
         static void Main(string[] args)
         {
-            var testc = new SocketServer();
-            testc.Startup();
-            Console.WriteLine("Hello World!");
-            testc.sendData("test123");
+            //var testc = new SocketServer();
+            //testc.Startup();
+            //Console.WriteLine("Hello World!");
+            //testc.sendData("test123");
+
+            SocketServer.sendData("sdsdsds");
         }
     }
 }

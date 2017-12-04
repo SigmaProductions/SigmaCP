@@ -8,7 +8,7 @@ namespace SigmaCP.Controllers
 {
     public static class SocketServer
     {
-        const string DEFAULT_SERVER = "192.168.88.219";
+        const string DEFAULT_SERVER = "192.168.88.1";
         const int DEFAULT_PORT = 804;
 
 

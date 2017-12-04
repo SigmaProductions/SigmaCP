@@ -18,18 +18,21 @@ namespace SigmaCP.Model
         }
         public Interpreter(JsonInterpreter jsonInterpreter)
         {
-            this.Action = new MoonSharp.Interpreter.Script();
+            Action = new MoonSharp.Interpreter.Script();
             script = jsonInterpreter.GetScript();
             note = jsonInterpreter.GetNote();
 
             Action.Globals["note"] = note.LoadedData;
             Action.Globals["Vibrate"]=(Func<string,int>)Controllers.SocketServer.sendData;
-            Action = new MoonSharp.Interpreter.Script();
+          
         }
 
         public void Run()
         {
-            Action.DoString(script.GetScriptBody());
+            
+            var x = Action.DoString(script.GetScriptBody());
+            ;
+            
         }
     }
 }
