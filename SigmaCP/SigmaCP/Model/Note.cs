@@ -5,14 +5,15 @@ using System.Threading.Tasks;
 
 namespace SigmaCP.Model
 {
-    public class DataManager
+    public class Note
     {
-        private string LoadedData;
-        public DataManager()
+        public string LoadedData { get; set; }
+
+        public Note()
         {
 
         }
-        public DataManager(string rawData)
+        public Note(string rawData)
         {
             this.LoadedData = rawData;
         }
@@ -22,6 +23,7 @@ namespace SigmaCP.Model
             return LoadedData;
         }
 
+        
 
     }
 }
