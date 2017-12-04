@@ -17,7 +17,7 @@ namespace SigmaCP.Model
             note = jsonInterpreter.GetNote();
 
             Action.Globals["note"] = note.GetData();
-
+            //ActionGlobals["Vibrate"]=(Func<List<int>>);
             Action = new MoonSharp.Interpreter.Script();
         }
 

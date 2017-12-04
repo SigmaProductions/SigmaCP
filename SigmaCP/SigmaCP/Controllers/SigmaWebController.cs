@@ -10,11 +10,11 @@ namespace SigmaCP.Controllers
     [Route("api/[controller]")]
     public class SigmaWebController : Controller
     {
-
+        SocketServer socketServer;
 
         public SigmaWebController()
         {
-
+            socketServer = new SocketServer();
         }
 
         // GET api/values/5

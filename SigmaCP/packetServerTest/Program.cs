@@ -9,7 +9,7 @@ namespace packetServerTest
             var testc = new SocketServer();
             testc.Startup();
             Console.WriteLine("Hello World!");
-            testc.sendData();
+            testc.sendData("test123");
         }
     }
 }

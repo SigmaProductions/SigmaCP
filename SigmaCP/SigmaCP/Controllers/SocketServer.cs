@@ -6,16 +6,16 @@ using System.Net;
 
 namespace SigmaCP.Controllers
 {
-    public class SocketServer
+    public static class SocketServer
     {
         const string DEFAULT_SERVER = "192.168.88.219";
         const int DEFAULT_PORT = 804;
 
 
-        System.Net.Sockets.UdpClient udpServer;
+        static System.Net.Sockets.UdpClient udpServer=null;
+        static IPEndPoint serverEndPoint=null;
 
-        IPEndPoint serverEndPoint;
-        public void Startup()
+        private static void Startup()
         {
              // The chat server always starts up on the localhost, using the default port 
             IPHostEntry hostInfo = Dns.GetHostByName(DEFAULT_SERVER);
@@ -24,9 +24,10 @@ namespace SigmaCP.Controllers
             udpServer = new System.Net.Sockets.UdpClient();
 
         }
-        public void sendData()
+        public static void sendData(string data)
         {
-            udpServer.Send(System.Text.Encoding.ASCII.GetBytes("dasfsfds"),"dasfsfds".Length, serverEndPoint);
+            Startup();
+            udpServer.Send(System.Text.Encoding.ASCII.GetBytes(data),data.Length, serverEndPoint);
         }
     }
 }
