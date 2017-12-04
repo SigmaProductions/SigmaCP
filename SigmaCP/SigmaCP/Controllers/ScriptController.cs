@@ -7,5 +7,8 @@ namespace SigmaCP.Controllers
 {
     public class ScriptController
     {
+        //Prototypes
+        //void loadsctipt(string script)
+        //void engagescript()
     }
 }
