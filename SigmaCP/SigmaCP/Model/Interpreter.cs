@@ -16,6 +16,8 @@ namespace SigmaCP.Model
             script = jsonInterpreter.GetScript();
             note = jsonInterpreter.GetNote();
 
+            Action.Globals["note"] = note.GetData();
+
             Action = new MoonSharp.Interpreter.Script();
         }
 
