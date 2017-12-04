@@ -23,7 +23,7 @@ namespace SigmaCP.Controllers
         [HttpPost]
         public string Post([FromBody] Note note)
         {
-            return note.GetNoteInMorse();
+            return null;
         }
 
         // PUT api/values/5
